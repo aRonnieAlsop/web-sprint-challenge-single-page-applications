@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react"
 import { Routes, Route, Link } from 'react-router-dom'
 import { Pizza } from './Components/pizza'
-import axios from 'axios'
+
+
 
 
 const initialFormValues = {
   name: '',
   size: '',
-  pepperoni: false,
-  cheese: false,
-  mushrooms: false,
-  anchovies: false,
+  topping1: false,
+  topping2: false,
+  topping3: false,
+  topping4: false,
   special: '',
 
 
@@ -28,35 +29,7 @@ const Menu = () => {
 }
 
 const App = () => {
-
-  const [order, setOrder] = useState([])
-
-const [formValues, setFormValues] = useState(initialFormValues)
-
-  const submitOrder = () => {
-    const newOrder = {
-        name: formValues.name.trim(),
-        size: formValues.size,
-        pepperoni: formValues.pepperoni,
-        cheese: formValues.cheese,
-        mushrooms: formValues.mushrooms,
-        anchovies: formValues.anchovies,
-  }
-
-  if (!newOrder.name || !newOrder.size) return
-  
-  axios.post('fakeapi.com', newOrder)
-    .then(res => {
-        const newOrderToKitchenPrinter = res.data
-        setOrder([newOrderToKitchenPrinter, ...order])
-        setFormValues(initialFormValues)
-    })
-}
-
-useEffect(() => {
-    axios.get('fakeapi.com').then(res => setOrder(res.data))
-}, [])
-
+ 
   return (
    <div>
     <h1>Basic Pizza</h1>
@@ -66,7 +39,7 @@ useEffect(() => {
       </nav>
       <Routes>
         <Route path="/" element={<Menu />} />
-        <Route path="/Pizza" element={<Pizza  submit={submitOrder} values={formValues}/>}/>
+        <Route path="/Pizza" element={<Pizza />}/>
       </Routes>
     
    </div>
