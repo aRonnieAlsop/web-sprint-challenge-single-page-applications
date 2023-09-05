@@ -1,6 +1,10 @@
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 
 
 export const Pizza = (props) => {
+
+
 
 const {
        values, 
@@ -19,6 +23,8 @@ const onSubmit = evt => {
     evt.preventDefault()
     submit()
 }
+
+
  
  return (
        <form id="pizza-form" onSubmit={onSubmit}>
@@ -54,7 +60,7 @@ const onSubmit = evt => {
         </div>
         <div>
             <label>Special instructions:</label>
-            <input type="text" placeholder="type order notes here" onChange={onChange} id="special-text"></input>
+            <input name="special" type="text" placeholder="type order notes here" onChange={onChange} id="special-text"></input>
         </div>
         <div>
             <button id="order-button">Add to Order</button>
