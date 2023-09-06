@@ -17,7 +17,7 @@ export const Pizza = (props) => {
     const handleNameChange = (e) => {
         const newName = e.target.value
         setName(newName)
-        setNameError('')
+        setNameError('name must be at least 2 characters')
     }
 
     const handleSizeChange = (e) => {
