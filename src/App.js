@@ -35,7 +35,7 @@ const App = () => {
     <h1>Basic Pizza</h1>
       <nav>
         <Link to="/">Menu </Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <Link to="/pizza">Order Pizza</Link>
+        <Link to="/pizza" id="order-pizza">Order Pizza</Link>
       </nav>
       <Routes>
         <Route path="/" element={<Menu />} />
