@@ -39,7 +39,7 @@ const App = () => {
       </nav>
       <Routes>
         <Route path="/" element={<Menu />} />
-        <Route path="/Pizza" element={<Pizza />}/>
+        <Route path="/pizza" element={<Pizza />}/>
       </Routes>
     
    </div>
