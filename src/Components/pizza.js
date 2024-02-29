@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { updateOrder } from './PIzzaOrder'
+
 import './Pizza.css'
 
 export const Pizza = (props) => {
@@ -97,9 +97,7 @@ export const Pizza = (props) => {
         setSizeError('')
         setToppingError('')
     }
-    useEffect(() => {
-        updateOrder()
-    }, [size, topping1, topping2, topping3, topping4, glutenFree])
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -173,7 +171,7 @@ export const Pizza = (props) => {
         </div>
         <div className="checkbox-label">
             <label htmlFor="glutenFree">Gluten Free Crust</label>
-            <input type="radio" id="glutenFree" name="glutenFree" checked={glutenFree} onChange={handleGlutenFreeChange} className="checkbox-input"/>
+            <input type="checkbox" id="glutenFree" name="glutenFree" checked={glutenFree} onChange={handleGlutenFreeChange} className="checkbox-input"/>
         </div>
 
         {glutenFree && (
