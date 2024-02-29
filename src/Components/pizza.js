@@ -13,7 +13,9 @@ export const Pizza = (props) => {
     const [topping4, setTopping4] = useState(false)
     const [special, setSpecial] = useState('')
     
-    
+    const [sizeError, setSizeError] = useState('')
+    const [toppingError, setToppingError] = useState('')
+
     const handleNameChange = (e) => {
         const newName = e.target.value
         setName(newName)
@@ -50,11 +52,30 @@ export const Pizza = (props) => {
     }
 
     const validateName = () => {
+        let isValid = true
+
         if (name.length < 2) {
             setNameError('name must be at least 2 characters')
-            return false
+            isValid = false
+        } else {
+            setNameError('')
         }
-        return true
+
+        if(!size) {
+            setSizeError('please select a size')
+            isValid = false
+        } else {
+            setSizeError('')
+        }
+
+        if (!(topping1 || topping2 || topping3 || topping4 )) {
+            setToppingError('please select at least one topping')
+            isValid = false
+        } else {
+            setToppingError('')
+        }
+       
+        return isValid
     }
 
     const handleSubmit = (e) => {
@@ -114,7 +135,10 @@ export const Pizza = (props) => {
         <div>
             <button id="order-button" type="submit">Add to Order</button>
         </div>
-       
+       <div>
+        <div>{sizeError && <div className="error">{sizeError}</div>}</div>
+        <div>{toppingError && <div className="error">{toppingError}</div>}</div>
+       </div>
        </form>
        {nameError && <div className="error">{nameError}</div>}
        </div>
