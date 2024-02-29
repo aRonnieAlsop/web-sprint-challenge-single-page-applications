@@ -169,6 +169,12 @@ export const Pizza = (props) => {
             <label htmlFor="glutenFree">Gluten Free Crust</label>
             <input type="radio" id="glutenFree" name="glutenFree" checked={glutenFree} onChange={handleGlutenFreeChange} className="checkbox-input"/>
         </div>
+
+        {glutenFree && (
+            <div className="gluten-free-message">
+                    Gluten-free crust only comes in a medium size.
+                </div>
+        )}
         <div>
             <button id="order-button" type="submit">Add to Order</button>
         </div></div>
