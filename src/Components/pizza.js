@@ -1,5 +1,7 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { updateOrder } from './PIzzaOrder'
 import './Pizza.css'
+
 export const Pizza = (props) => {
 
    
@@ -95,6 +97,9 @@ export const Pizza = (props) => {
         setSizeError('')
         setToppingError('')
     }
+    useEffect(() => {
+        updateOrder()
+    }, [size, topping1, topping2, topping3, topping4, glutenFree])
 
     const handleSubmit = (e) => {
         e.preventDefault()

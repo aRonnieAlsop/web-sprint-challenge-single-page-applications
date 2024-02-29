@@ -1,6 +1,15 @@
-
+body {
+    background-image: url('https://cdn.dribbble.com/users/5090008/screenshots/10910108/media/34467b12990b232725e36afca45022c8.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+}
 
 .order-form-container {
+    background: white;
+    position: relative;
+    z-index: 1;
     border: 1px solid #ccc;
     padding: 20px;
     margin: 20px;
@@ -39,3 +48,4 @@ label {
 .checkbox-input {
     margin-right: 5px;
 }
+
