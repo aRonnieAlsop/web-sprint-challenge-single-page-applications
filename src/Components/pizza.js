@@ -13,11 +13,15 @@ export const Pizza = (props) => {
     const [topping4, setTopping4] = useState(false)
     const [special, setSpecial] = useState('')
     
-
+    
     const handleNameChange = (e) => {
         const newName = e.target.value
         setName(newName)
-        setNameError('name must be at least 2 characters')
+        if (newName.length < 2) {
+            setNameError('name must be at least 2 characters')
+        } else {
+            setNameError('')
+        }
     }
 
     const handleSizeChange = (e) => {
