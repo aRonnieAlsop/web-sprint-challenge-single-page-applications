@@ -1,5 +1,5 @@
-import React from "react"
-import { Routes, Route, Link } from 'react-router-dom'
+import React, { useState } from "react"
+import { Routes, Route, Link, useNavigate } from 'react-router-dom'
 import { Pizza } from './Components/pizza'
 import Header from "./Components/Header"
 
@@ -30,13 +30,20 @@ const Menu = () => {
 }
 
 const App = () => {
+  const [showHeader, setShowHeader] = useState(true)
+  const navigate = useNavigate()
+
+  const handleLinkClick = () => {
+    setShowHeader(false)
+    navigate("/pizza")
+  }
  
   return (
    <div>
-    <Header />
+     {showHeader && <Header />}
       <nav>
-        <Link to="/">Menu </Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <Link to="/pizza" id="order-pizza">Order Pizza</Link>
+        <Link to="/" onClick={()=> setShowHeader(true)}>Menu{" "} </Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <Link to="/pizza" id="order-pizza" onClick={handleLinkClick}>Order Pizza</Link>
       </nav>
       <Routes>
         <Route path="/" element={<Menu />} />
