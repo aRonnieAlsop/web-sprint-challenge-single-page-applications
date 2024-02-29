@@ -122,7 +122,7 @@ export const Pizza = (props) => {
        <form id="pizza-form" onSubmit={handleSubmit}>
             <h2 align="center">Order Here</h2>
             <div className="order-form-container">   <div>
-            <label>Name:
+            <label>Name:    
         <input 
             id="name-input"
             name='name'
@@ -131,11 +131,12 @@ export const Pizza = (props) => {
             placeholder='type a name for the order'
             maxLength='20'
             onChange={handleNameChange}
+            style={{ marginLeft: '20px', textAlign: 'center' }}
            /></label>
             </div>
             <div>
         <label>Size: 
-            <select id="size-dropdown" name="size" value={size} onChange={handleSizeChange}>
+            <select id="size-dropdown" name="size" value={size} onChange={handleSizeChange} style={{ marginLeft: '20px' }}>
                 <option value=''>--Select a Size--</option>
                 <option value='personal'>personal</option>
                 <option value='small'>small</option>
@@ -163,7 +164,7 @@ export const Pizza = (props) => {
        </div>
         <div>
             <label>Special instructions:</label>
-            <input name="special" type="text" placeholder="type order notes here" id="special-text" value={special} onChange={handleSpecialInstruction}></input>
+            <input name="special" type="text" placeholder="type order notes here" id="special-text" value={special} onChange={handleSpecialInstruction} style={{ marginLeft: '20px', textAlign: 'center' }}></input>
         </div>
         <div className="checkbox-label">
             <label htmlFor="glutenFree">Gluten Free Crust</label>
