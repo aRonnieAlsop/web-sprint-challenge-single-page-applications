@@ -1,5 +1,5 @@
 import { useState } from 'react'
-
+import './Pizza.css'
 export const Pizza = (props) => {
 
    
@@ -114,8 +114,8 @@ export const Pizza = (props) => {
 
         <div>
        <form id="pizza-form" onSubmit={handleSubmit}>
-        <div>
-            <h2>Order Online</h2>
+            <h2 align="center">Order Here</h2>
+            <div className="order-form-container">   <div>
             <label>Name:
         <input 
             id="name-input"
@@ -149,7 +149,8 @@ export const Pizza = (props) => {
         </div>
         <div>
             <button id="order-button" type="submit">Add to Order</button>
-        </div>
+        </div></div>
+         
        <div>
         <div>{sizeError && <div className="error">{sizeError}</div>}</div>
         <div>{toppingError && <div className="error">{toppingError}</div>}</div>

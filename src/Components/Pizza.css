@@ -1,0 +1,16 @@
+
+
+.order-form-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#pizza-form {
+    align-self: flex-start;
+    width: 100%;
+}
