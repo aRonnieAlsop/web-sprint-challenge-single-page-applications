@@ -20,3 +20,22 @@ select,
 button {
     margin-bottom: 10px;
 }
+
+label {
+    margin-bottom: 10px;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.checkbox-input {
+    margin-right: 5px;
+}

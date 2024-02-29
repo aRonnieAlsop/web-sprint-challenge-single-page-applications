@@ -131,18 +131,30 @@ export const Pizza = (props) => {
         <label>Size: 
             <select id="size-dropdown" name="size" value={size} onChange={handleSizeChange}>
                 <option value=''>--Select a Size--</option>
-                <option value='personal'>Personal</option>
-                <option value='small'>Small</option>
-                <option value='medium'>Medium</option>
-                <option value='large'>Large</option>
+                <option value='personal'>personal</option>
+                <option value='small'>small</option>
+                <option value='medium'>medium</option>
+                <option value='large'>large</option>
             </select>
         </label></div>
-        <div>
-           <label>Pepperoni<input type="checkbox" name="topping1" checked={topping1} onChange={handleTopping1Change} /></label>
-           <label>Cheese<input type="checkbox" name="topping2" checked={topping2} onChange={handleTopping2Change} /></label>
-           <label>Anchovies<input type="checkbox" name="topping3" checked={topping3} onChange={handleTopping3Change}/></label>
-           <label>Mushrooms<input type="checkbox" name="topping4" checked={topping4}onChange={handleTopping4Change} ></input></label>
+       <div className="checkbox-group">
+        <div className="checkbox-label">
+            <input type="checkbox" id="topping1" name="topping1" checked={topping1} onChange={handleTopping1Change} className="checkbox-input"/>
+            <label htmlFor="topping1">Cheese</label>
         </div>
+        <div className="checkbox-label">
+        <input type="checkbox" id="topping2" name="topping2" checked={topping2} onChange={handleTopping2Change} className="checkbox-input"/>
+            <label htmlFor="topping2">Pepperoni</label>
+        </div>
+        <div className="checkbox-label">
+        <input type="checkbox" id="topping3" name="topping3" checked={topping3} onChange={handleTopping3Change} className="checkbox-input"/>
+            <label htmlFor="topping3">Mushrooms</label>
+        </div>
+        <div className="checkbox-label">
+        <input type="checkbox" id="topping4" name="topping4" checked={topping4} onChange={handleTopping4Change} className="checkbox-input"/>
+            <label htmlFor="topping4">Anchovies</label>
+        </div>
+       </div>
         <div>
             <label>Special instructions:</label>
             <input name="special" type="text" placeholder="type order notes here" id="special-text" value={special} onChange={handleSpecialInstruction}></input>
