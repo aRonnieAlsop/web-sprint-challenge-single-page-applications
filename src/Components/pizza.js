@@ -12,7 +12,7 @@ export const Pizza = (props) => {
     const [topping3, setTopping3] = useState(false)
     const [topping4, setTopping4] = useState(false)
     const [special, setSpecial] = useState('')
-    
+    const [glutenFree, setGlutenFree] = useState(false)
     const [sizeError, setSizeError] = useState('')
     const [toppingError, setToppingError] = useState('')
 
@@ -51,6 +51,10 @@ export const Pizza = (props) => {
         setSpecial(newSpecialInstruction)
     }
 
+    const handleGlutenFreeChange = (e) => {
+        setGlutenFree(e.target.checked)
+    }
+
     const validateName = () => {
         let isValid = true
 
@@ -86,6 +90,7 @@ export const Pizza = (props) => {
         setTopping3('')
         setTopping4('')
         setSpecial('')
+        setGlutenFree('')
         setNameError('')
         setSizeError('')
         setToppingError('')
@@ -103,6 +108,7 @@ export const Pizza = (props) => {
             topping3,
             topping4,
             special,
+            glutenFree,
          }   
          console.log('New order submitted: ', formData)
 
@@ -158,6 +164,10 @@ export const Pizza = (props) => {
         <div>
             <label>Special instructions:</label>
             <input name="special" type="text" placeholder="type order notes here" id="special-text" value={special} onChange={handleSpecialInstruction}></input>
+        </div>
+        <div className="checkbox-label">
+            <label htmlFor="glutenFree">Gluten Free Crust</label>
+            <input type="radio" id="glutenFree" name="glutenFree" checked={glutenFree} onChange={handleGlutenFreeChange} className="checkbox-input"/>
         </div>
         <div>
             <button id="order-button" type="submit">Add to Order</button>
