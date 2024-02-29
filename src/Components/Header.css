@@ -1,0 +1,27 @@
+@keyframes neonBlink {
+    0% {
+        color: #fff;
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
+    }
+    50% {
+        color: #f06;
+        text-shadow: 0 0 10px #f06, 0 0 20px #f06, 0 0 30px #f06;
+    }
+    100% {
+        color: #fff;
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
+    }
+}
+
+.header-container {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 3em;
+    margin: 0;
+    animation: neonBlink 1.5s infinite;
+    position: relative;
+    z-index: 2;
+    padding: 5px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9));
+}
+

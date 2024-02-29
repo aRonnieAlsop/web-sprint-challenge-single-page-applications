@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import { Routes, Route, Link } from 'react-router-dom'
 import { Pizza } from './Components/pizza'
+import Header from "./Components/Header"
 
 
 
@@ -32,7 +33,7 @@ const App = () => {
  
   return (
    <div>
-    <h1>Basic Pizza</h1>
+    <Header />
       <nav>
         <Link to="/">Menu </Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <Link to="/pizza" id="order-pizza">Order Pizza</Link>
