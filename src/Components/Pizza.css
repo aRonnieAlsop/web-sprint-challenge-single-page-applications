@@ -14,3 +14,9 @@
     align-self: flex-start;
     width: 100%;
 }
+
+input, 
+select,
+button {
+    margin-bottom: 10px;
+}
