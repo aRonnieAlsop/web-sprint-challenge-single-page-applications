@@ -124,7 +124,7 @@ export const Pizza = (props) => {
         <div>
        <form id="pizza-form" onSubmit={handleSubmit}>
         
-        <h2 align="center" className="arrow">Order</h2>
+        <h2 align="center" className="order-here">Order Here</h2>
         <div></div>
             <div className="order-form-container">   <div>
             <label>Name:    
