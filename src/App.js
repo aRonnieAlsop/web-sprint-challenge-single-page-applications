@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Routes, Route, Link, useNavigate } from 'react-router-dom'
+import { Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom'
 import { Pizza } from './Components/pizza'
 import Header from "./Components/Header"
 
@@ -14,8 +14,6 @@ const initialFormValues = {
   topping3: false,
   topping4: false,
   special: '',
-
-
 }
 
 const Menu = () => {
@@ -32,6 +30,8 @@ const Menu = () => {
 const App = () => {
   const [showHeader, setShowHeader] = useState(true)
   const navigate = useNavigate()
+  const location = useLocation()
+
 
   const handleLinkClick = () => {
     setShowHeader(false)
@@ -42,8 +42,12 @@ const App = () => {
    <div>
      {showHeader && <Header />}
       <nav>
-        <Link to="/" onClick={()=> setShowHeader(true)}>Menu{" "} </Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <Link to="/pizza" id="order-pizza" onClick={handleLinkClick}>Order Pizza</Link>
+       {location.pathname !== "/" &&
+        (<Link to="/" onClick={()=> setShowHeader(true)}>Menu{" "} </Link>
+        )}
+        {location.pathname !== "/pizza" &&
+        (<Link to="/pizza" id="order-pizza" onClick={handleLinkClick}>Order Pizza</Link>
+        )}
       </nav>
       <Routes>
         <Route path="/" element={<Menu />} />
