@@ -78,6 +78,19 @@ export const Pizza = (props) => {
         return isValid
     }
 
+    const resetForm = () => {
+        setName('')
+        setSize('')
+        setTopping1('')
+        setTopping2('')
+        setTopping3('')
+        setTopping4('')
+        setSpecial('')
+        setNameError('')
+        setSizeError('')
+        setToppingError('')
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault()
 
@@ -92,8 +105,10 @@ export const Pizza = (props) => {
             special,
          }   
          console.log('New order submitted: ', formData)
+
+         resetForm()
         }
-    
+        
     }
  return (
 
