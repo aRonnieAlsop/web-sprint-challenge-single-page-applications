@@ -6,15 +6,15 @@ import './App.css'
 
 
 
-const initialFormValues = {
-  name: '',
-  size: '',
-  topping1: false,
-  topping2: false,
-  topping3: false,
-  topping4: false,
-  special: '',
-}
+// const initialFormValues = {
+//   name: '',
+//   size: '',
+//   topping1: false,
+//   topping2: false,
+//   topping3: false,
+//   topping4: false,
+//   special: '',
+// }
 
 const Menu = () => {
   return <div id="menu-container">

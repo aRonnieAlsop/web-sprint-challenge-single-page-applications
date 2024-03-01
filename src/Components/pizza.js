@@ -178,7 +178,7 @@ export const Pizza = (props) => {
                 <option value='large'>large</option>
             </select>
         </label></div>
-       <div className="checkbox-group">
+       <div className="checkbox-group"><h2>Toppings:</h2>
         <div className="checkbox-label">
             <input type="checkbox" id="topping1" name="topping1" checked={topping1} onChange={handleTopping1Change} className="checkbox-input"/>
             <label htmlFor="topping1">Cheese</label>
