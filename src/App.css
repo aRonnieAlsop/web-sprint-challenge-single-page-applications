@@ -4,12 +4,11 @@
   text-align: center;
   color: pink;
   text-shadow: -1px -1px 0 red;
-  
 }
 
 #menu-container {
   background-color: rgba(0, 0, 0, 0.6);
-  color: white;
+  color: #fe6bb7;
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
   text-align: center;
   padding: 20px;
