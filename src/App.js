@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom'
-import { Pizza } from './Components/pizza'
+import { Pizza } from './Components/Pizza.js'
 import Header from "./Components/Header"
 import './App.css'
 

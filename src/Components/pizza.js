@@ -17,6 +17,7 @@ export const Pizza = (props) => {
     const [glutenFree, setGlutenFree] = useState(false)
     const [sizeError, setSizeError] = useState('')
     const [toppingError, setToppingError] = useState('')
+    const [price, setPrice] = useState(0)
 
     const handleNameChange = (e) => {
         const newName = e.target.value
@@ -98,6 +99,34 @@ export const Pizza = (props) => {
         setToppingError('')
     }
 
+    useEffect(() => {
+        let calculatedPrice = 0
+
+        switch (size) {
+            case 'personal': 
+                calculatedPrice = 8.0;
+                break;
+            case 'small':
+                calculatedPrice = 15.0;
+                break;
+            case 'medium':
+                calculatedPrice = 20.0;
+                break;
+            case 'large':
+                calculatedPrice = 28.0;
+                break;
+            default:
+                break;
+        }
+
+        calculatedPrice += (topping1 + topping2 + topping3 + topping4) * 1.5
+
+        if (glutenFree) {
+            calculatedPrice = 23.0
+        }
+
+        setPrice(calculatedPrice) 
+    }, [size, topping1, topping2, topping3, topping4, glutenFree])
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -116,8 +145,7 @@ export const Pizza = (props) => {
          console.log('New order submitted: ', formData)
 
          resetForm()
-        }
-        
+        }   
     }
  return (
 
@@ -185,7 +213,7 @@ export const Pizza = (props) => {
         <div>{sizeError && <div className="error">{sizeError}</div>}</div>
         <div>{nameError && <div className="error">{nameError}</div>}</div>
         <div>
-            <button id="order-button" type="submit">Add to Order</button>
+            <button id="order-button" type="submit">Add to Order</button><h2 class="price-tag">${price.toFixed(2)}</h2>
         </div></div>
        </form>
        

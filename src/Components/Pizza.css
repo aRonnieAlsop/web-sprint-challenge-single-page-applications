@@ -73,3 +73,8 @@ label {
 .gluten-free-message {
     color: yellow;
 }
+
+.price-tag {
+    color: #39FF14;
+    margin: 0px;
+}
