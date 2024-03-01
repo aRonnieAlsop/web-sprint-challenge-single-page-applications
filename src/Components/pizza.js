@@ -180,17 +180,15 @@ export const Pizza = (props) => {
             <div className="gluten-free-message">
                     Gluten-free crust only comes in a medium size.
                 </div>
-        )}
+        )} 
+        <div>{toppingError && <div className="error">{toppingError}</div>}</div>
+        <div>{sizeError && <div className="error">{sizeError}</div>}</div>
+        <div>{nameError && <div className="error">{nameError}</div>}</div>
         <div>
             <button id="order-button" type="submit">Add to Order</button>
         </div></div>
-         
-       <div>
-        <div>{sizeError && <div className="error">{sizeError}</div>}</div>
-        <div>{toppingError && <div className="error">{toppingError}</div>}</div>
-       </div>
        </form>
-       {nameError && <div className="error">{nameError}</div>}
+       
        </div>
     )
 }

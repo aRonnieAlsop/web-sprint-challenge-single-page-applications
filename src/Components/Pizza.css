@@ -69,4 +69,6 @@ label {
     margin-right: 5px;
 }
 
-
+.error {
+    color: yellow;
+}
