@@ -69,6 +69,7 @@ label {
     margin-right: 5px;
 }
 
-.error {
+.error,
+.gluten-free-message {
     color: yellow;
 }
