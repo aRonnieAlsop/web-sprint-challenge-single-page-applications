@@ -35,7 +35,7 @@ const App = () => {
 
   const handleLinkClick = () => {
     setShowHeader(false)
-    navigate("/pizza")
+    navigate("/Pizza")
   }
  
   return (
@@ -55,7 +55,7 @@ const App = () => {
       </nav>
       <Routes>
         <Route path="/" element={<Menu />} />
-        <Route path="/pizza" element={<Pizza />}/>
+        <Route path="/Pizza" element={<Pizza />}/>
       </Routes>
     
    </div>

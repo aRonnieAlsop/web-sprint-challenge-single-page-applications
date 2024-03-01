@@ -123,6 +123,7 @@ export const Pizza = (props) => {
 
         if (glutenFree) {
             calculatedPrice = 23.0
+            calculatedPrice += (topping1 + topping2 + topping3 + topping4) * 1.5
         }
 
         setPrice(calculatedPrice) 
